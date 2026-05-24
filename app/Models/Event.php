@@ -5,10 +5,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {
-    // ...
-    // ... ($fillable kalian dari pertemuan lalu biarkan tidak diubah) 
-
-    // Menandakan atribut: 1 Event harus terpaut pada satu wujud Kategori
+    protected $fillable = [
+        'category_id',
+        'title',
+        'description',
+        'date',
+        'location',
+        'price',
+        'stock',
+        'poster_path'
+    ];
     public function category()
     {
         return $this->belongsTo(Category::class);
