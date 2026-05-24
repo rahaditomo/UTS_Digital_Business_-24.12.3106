@@ -21,18 +21,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     Route::get('/', [DashboardController::class,'index'])->name('dashboard');
     Route::get('/transactions', [DashboardController::class,'indexTransaction'])->name('transactions.index');
-    // dan seterusnya...
-});
-
-Route::prefix('admin')->name('admin.')->group(function () {
-    Route::resource('events', EventAdminController::class);
-});
-
-Route::prefix('admin')->name('admin.')->group(function () {
-    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-    Route::resource('events', EventAdminController::class);
     
-    Route::get('/partners', [\App\Http\Controllers\Admin\PartnerController::class, 'index'])->name('partners.index');
-    Route::get('/partners/create', [\App\Http\Controllers\Admin\PartnerController::class, 'create'])->name('partners.create');
-    Route::post('/partners', [\App\Http\Controllers\Admin\PartnerController::class, 'store'])->name('partners.store');
+    Route::resource('partners', \App\Http\Controllers\Admin\PartnerController::class);
+
+    Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class);
 });

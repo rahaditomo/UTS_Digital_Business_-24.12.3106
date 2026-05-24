@@ -12,13 +12,10 @@ class PartnerSeeder extends Seeder
      */
     public function run(): void
     {
-        $faker = \Faker\Factory::create();
-
-        for ($i = 0; $i < 5; $i++) {
-            \App\Models\Partner::create([
-                'name' => $faker->company(),
-                'logo_url' => 'https://placehold.co/200x200',
-            ]);
-        }
+        \App\Models\Partner::create(['name' => 'Cristiano Ronaldo', 'logo_url' => 'https://placehold.co/200x200']);
+        \App\Models\Partner::create(['name' => 'Lionel Messi', 'logo_url' => 'https://placehold.co/200x200']);
+        \App\Models\Partner::create(['name' => 'Neymar Jr.', 'logo_url' => 'https://placehold.co/200x200']);
+        \App\Models\Partner::create(['name' => 'Sergio Ramos', 'logo_url' => 'https://placehold.co/200x200']);
+        \App\Models\Partner::create(['name' => 'Karim Benzema', 'logo_url' => 'https://placehold.co/200x200']);
     }
 }

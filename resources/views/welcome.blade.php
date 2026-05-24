@@ -105,6 +105,18 @@
             @endforeach
 
     </section>
-
+ 
+    <section class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="text-3xl font-extrabold mb-8 text-center">Partner Kami</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            @foreach($partners as $partner)
+                <div
+                    class="bg-white rounded-2xl shadow-sm border border-slate-100 p-4 flex flex-col items-center gap-3 hover:shadow-md transition">
+                    <img src="{{ $partner->logo_url }}" class="w-16 h-16 rounded-xl object-cover">
+                    <p class="font-bold text-slate-700 text-sm text-center">{{ $partner->name }}</p>
+                </div>
+            @endforeach
+        </div>
+    </section>
 
 @endsection
