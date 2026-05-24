@@ -27,3 +27,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('events', EventAdminController::class);
 });
+
+Route::get('/partners', [\App\Http\Controllers\Admin\PartnerController::class, 'index'])->name('partners.index');
+Route::get('/partners/create', [\App\Http\Controllers\Admin\PartnerController::class, 'create'])->name('partners.create');
+Route::post('/partners', [\App\Http\Controllers\Admin\PartnerController::class, 'store'])->name('partners.store');
